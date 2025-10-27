@@ -15,3 +15,13 @@
   font-weight: bold;
   font-display: swap;
 }
+
+@font-face {
+  font-family: Raleway;
+  src:
+    url(./Raleway-Medium.woff2) format('woff2'),
+    url(./Raleway-Medium.woff) format('woff');
+  font-weight: medium;
+  font-display: swap;
+}
+
