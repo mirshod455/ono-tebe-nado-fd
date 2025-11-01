@@ -22,11 +22,15 @@
 .header {
 	padding: 89px 50px 96px;
 
-	display: flex;
-	flex-direction: row;
+	display: grid;
+	grid-template-columns: 392px 1fr 1fr;
 	align-items: center;
-	justify-content: space-between;
-	gap: 40px;
+	justify-items: center;
+}
+
+.navigation__menu {
+	align-self: center;
+	justify-self: start;
 }
 
 .navigation__menu-list {
@@ -36,9 +40,11 @@
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
-	gap: 13.5px;
+	gap: 28px;
 
-	list-style: circle inside;
+	font-weight: 400;
+	font-size: 18px;
+	list-style: circle;
 }
 
 .navigation__menu-list .navigation__menu-item__active {
@@ -49,11 +55,21 @@
 	text-decoration: none;
 }
 
+.navigation__menu-item {
+	padding-left: 3px;
+}
+
+.navigation__menu-link.main-link {
+	padding: 0;
+}
+
 .header__logo {
 	display: block;
 	width: 137px;
 
-	transform: translateY(3px) translateX(-81px);
+	justify-self: center;
+
+	transform: translateX(-44px) translateY(3px);
 }
 
 .header__logo-image {
@@ -61,18 +77,20 @@
 }
 
 .address__content {
+	margin-right: 10px;
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
+	justify-self: end;
 
 	font-weight: 400;
 	font-size: 18px;
+	font-style: normal;
 	line-height: 1.35;
 }
 
 .address__content.header-section {
 	width: 230px;
-	font-style: normal;
 }
 
 /* COVER */
@@ -119,17 +137,25 @@
 }
 
 .cover__content-slogan {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 24px;
+
 	font-weight: 400;
 	font-size: 22px;
 	line-height: 1.27;
-	letter-spacing: 3px;
+	letter-spacing: 0.1px;
 
 	text-transform: uppercase;
+	text-wrap: pretty;
 }
 
 .cover_content-button {
 	margin-right: 30px;
 	padding: 12px 32px;
+
+	font-weight: 500;
 	font-size: 22px;
 	color: #fff;
 
@@ -164,6 +190,7 @@
 .card__lists {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: space-between;
 	gap: 25px;
@@ -178,18 +205,10 @@
 	text-decoration: none;
 }
 
-/* .card::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background-color: #00000060;
-} */
-
 .card__content {
 	padding: 48px 40px;
 	width: 334px;
 	min-height: 596px;
-	height: 100%;
 
 	display: flex;
 	flex-direction: column;
@@ -217,6 +236,7 @@
 	z-index: 1;
 	font-weight: 700;
 	font-size: 22px;
+	line-height: 1.2;
 
 	text-transform: uppercase;
 	text-decoration: underline;
@@ -227,6 +247,10 @@
 .card__text {
 	z-index: 1;
 	font-size: 20px;
+	font-weight: 400;
+
+	letter-spacing: 1.4;
+	text-wrap: break-word;
 }
 
 /* CARDS in COVER END */
@@ -246,7 +270,7 @@
 /* ABOUT */
 
 .about {
-	padding: 0 24px 180px;
+	padding: 0 24px 181px 24px;
 
 	display: flex;
 	align-items: flex-start;
@@ -271,6 +295,7 @@
 
 .about__content {
 	padding-top: 136px;
+
 	display: flex;
 	flex-direction: column;
 	align-items: flex-start;
@@ -291,8 +316,11 @@
 	justify-content: space-between;
 	gap: 24px;
 
+	font-weight: 400;
 	font-size: 20px;
 	line-height: 1.2;
+
+	text-wrap: balance;
 }
 
 /* FOOTER */
@@ -307,7 +335,8 @@
 }
 
 .address__content.footer-section {
-	width: 255px;
+	margin: 0;
+	width: 242px;
 }
 
 .footer-navigation .navigation__menu-list {
@@ -317,6 +346,14 @@
 	gap: 0;
 
 	list-style: none;
+}
+
+.navigation__menu.footer-navigation {
+	align-self: start;
+}
+
+.navigation__menu.footer-navigation .navigation__menu-item {
+	padding: 0;
 }
 
 .footer__socials-list {
